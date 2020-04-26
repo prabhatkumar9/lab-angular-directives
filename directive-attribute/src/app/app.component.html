@@ -1,0 +1,101 @@
+<h2>This is a Attribute Directives</h2>
+<div class="para">
+  <article [ngStyle]="art">
+    <button type="submit" (click)="changeArt()">Click to change Div Style</button>
+    <!-- class binding -->
+    <h3 [class]="successClass">Attribute Change by classbinding</h3>
+    <!-- class binding based on condition -->
+    <h3 [class.text-danger]="!hasError">Attribute Change based on condition of class</h3>
+    <!-- ngclass binding  -->
+    <h3 [ngClass]="messageClasses">Attribute Change by Using NgClass</h3>
+    <!-- style binding -->
+    <h3 [style.color]="'orangered'">Attribute Change by Using Style Binding</h3>
+    <h3 [style.color]="hasError ? 'red' : 'gold'">Attribute Change by Using Style Binding</h3>
+    <h3 [style.color]="highColor">Attribute Change by Using Style Binding 2</h3>
+  </article>
+
+  <article [ngStyle]="art">
+    <h3>Attribute Change</h3>
+    <h3 [ngStyle]="titleStyles">Attribute Change by Using NgStyles</h3>
+
+    <!-- [ngStyle] using button  -->
+    <h3 [ngStyle]="chngeCol">Attribute Change by Using NgStyles</h3>
+    <button type="submit" (click)="changecolor()">Click-To-Change</button>
+  </article>
+</div>
+
+
+<div class="para">
+  <button type="submit" (click)="show()">Click to show</button>
+  <div *ngIf="display">
+    <h2>Hello ProGrads</h2>
+    <h3>This is ng if directive of Angular</h3>
+  </div>
+  <button type="submit" (click)="hide()">Hide</button>
+</div>
+
+<div class="para">
+  <button type="submit" (click)=" showNgblock()">ShowBlock</button>
+  <div *ngIf="error ; else elseBlock">
+    <h3>This is ngIf Block</h3>
+  </div>
+  <ng-template #elseBlock>
+    <h3>
+      This is ng elseBlock
+    </h3>
+  </ng-template>
+</div>
+
+<div class="if">
+  <h2>ngFor Directive</h2>
+  <div *ngFor="let color of colors">
+    <h3>{{color}}</h3>
+  </div>
+
+  <div *ngFor="let phone of phones">
+    <h3>{{phone}}</h3>
+  </div>
+</div>
+
+<div class="Student">
+  <table>
+    <thead>
+      <tr>
+        <th>Srl No</th>
+        <th>Student Name</th>
+        <th>Course</th>
+        <th>Grade</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let student of studentList;" [ngSwitch]="student.Grade">
+        <td>
+          <span *ngSwitchCase=" 'A'" [ngStyle]="swStyleA">{{student.SrlNo}}</span>
+          <span *ngSwitchCase=" 'B'" [ngStyle]="swStyleB">{{student.SrlNo}}</span>
+          <span *ngSwitchCase=" 'C'" [ngStyle]="swStyleC">{{student.SrlNo}}</span>
+          <span *ngSwitchCase=" 'D'" [ngStyle]="swStyleD">{{student.SrlNo}}</span>
+        </td>
+
+
+        <td>
+          <span *ngSwitchCase=" 'A'" [ngStyle]="swStyleA">{{student.Name}}</span>
+          <span *ngSwitchCase=" 'B'" [ngStyle]="swStyleB">{{student.Name}}</span>
+          <span *ngSwitchCase=" 'C'" [ngStyle]="swStyleC">{{student.Name}}</span>
+          <span *ngSwitchCase=" 'D'" [ngStyle]="swStyleD">{{student.Name}}</span>
+        </td>
+        <td>
+          <span *ngSwitchCase=" 'A'" [ngStyle]="swStyleA">{{student.Course}}</span>
+          <span *ngSwitchCase=" 'B'" [ngStyle]="swStyleB">{{student.Course}}</span>
+          <span *ngSwitchCase=" 'C'" [ngStyle]="swStyleC">{{student.Course}}</span>
+          <span *ngSwitchCase=" 'D'" [ngStyle]="swStyleD">{{student.Course}}</span>
+        </td>
+        <td>
+          <span *ngSwitchCase=" 'A'" [ngStyle]="swStyleA">{{student.Grade}}</span>
+          <span *ngSwitchCase=" 'B'" [ngStyle]="swStyleB">{{student.Grade}}</span>
+          <span *ngSwitchCase=" 'C'" [ngStyle]="swStyleC">{{student.Grade}}</span>
+          <span *ngSwitchCase=" 'D'" [ngStyle]="swStyleD">{{student.Grade}}</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
